@@ -13,4 +13,14 @@
     cursor: pointer;
     padding: 15px;
     width: 284px;
+
+    transition: .1s linear;
+
+    &:hover {
+      background-color: darken(@blue, 20%);
+    }
+
+    &:active {
+      background-color: lighten(@blue, 10%);
+    }
   }
