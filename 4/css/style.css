@@ -1,0 +1,305 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("../../fonts/ptsans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("../../fonts/ptsansbold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.page-body {
+  margin: 0 auto;
+  width: 320px;
+  background-color: #FFFFFF;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.mobile-header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.mobile-header__logo {
+  margin: 0 auto;
+  order: 1;
+}
+.mobile-header__navigation__toggle {
+  display: none;
+}
+.mobile-header__navigation__close-button {
+  display: none;
+}
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1px;
+  background-color: #6ea8cb;
+}
+.navigation-list__item {
+  position: relative;
+  background-color: #81B3D2;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.navigation-list__item:last-child::after {
+  content: "";
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 7px;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+  mix-blend-mode: normal;
+}
+.navigation-list__link {
+  display: block;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-top: 17px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.intro {
+  background-color: #a52a2a;
+  background-image: url("../../img/intro-background-index-mobile.jpg");
+  background-repeat: no-repeat;
+  padding-top: 90px;
+  padding-right: 19px;
+  padding-left: 19px;
+  padding-bottom: 85px;
+}
+.intro__greeting-logo {
+  display: block;
+}
+.lead-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 32px 12px;
+}
+.lead-text__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.lead-text__description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+  text-align: center;
+}
+.advantages-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.advantages-list__card {
+  background-color: #81B3D2;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.advantages-list__card__container {
+  padding: 37px 30px;
+  text-align: center;
+}
+.advantages-list__card__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 11px;
+}
+.advantages-list__card__number {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 17px;
+}
+.advantages-list__card__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.advantages-list__card--background-color {
+  background-color: #EEEEEE;
+}
+.advantages-list__card--background-color:not(:last-child) {
+  border-bottom: 1px solid #d5d5d5;
+}
+.advantages-list__card__title--background-color {
+  color: #000000;
+}
+.advantages-list__card__number--background-color,
+.advantages-list__card__description--background-color {
+  color: #333333;
+}
+.features-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.features-list__item {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+.features-list__item__container {
+  width: 284px;
+  padding: 25px 12px;
+}
+.features-list__item__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.features-list__item__description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 38px 12px 49px;
+}
+.action__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  color: #000000;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.action__description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.button {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #81B3D2;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  width: 284px;
+  transition: 0.1s linear;
+}
+.button:hover {
+  background-color: #4991be;
+}
+.button:active {
+  background-color: #a7cadf;
+}
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page-footer__sedona-hashtag {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+  margin-top: 33px;
+  margin-bottom: 30px;
+}
+.page-footer__socials-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 30px;
+}
+.page-footer__htmlacademy-link {
+  margin-bottom: 33px;
+}
+/*# sourceMappingURL=style.css.map */
