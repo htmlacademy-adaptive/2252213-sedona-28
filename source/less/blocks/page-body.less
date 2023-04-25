@@ -1,6 +1,6 @@
 
 .page-body {
-  width: 320px;
+  width: @mobile-width;
   margin: 0 auto;
   background-color: @white;
   font-family: @main-font;
@@ -9,4 +9,14 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+
+  min-height: 100vh;
+
+  @media (min-width: @tablet-width) {
+    width: @tablet-width;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-body-width;
+  }
 }

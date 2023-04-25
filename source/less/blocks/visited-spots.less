@@ -1,0 +1,71 @@
+.visited-spots {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  grid-template-areas:
+    "checkbox-bridge label-bridge"
+    "checkbox-mountain label-mountain"
+    "checkbox-park label-park"
+    "checkbox-rocks label-rocks";
+
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  row-gap: 16px;
+}
+
+.visited-spots__title {
+  text-align: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.visited-spots__input {
+  margin: 10px;
+}
+
+.visited-spots__label {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+
+  padding: 10px 10px 10px 16px;
+}
+
+.visited-spots__label--bridge {
+  grid-area: label-bridge;
+}
+
+.visited-spots__input--bridge {
+  grid-area: checkbox-bridge;
+}
+
+.visited-spots__label--mountain {
+  grid-area: label-mountain;
+}
+
+.visited-spots__input--mountain {
+  grid-area: checkbox-mountain;
+}
+
+.visited-spots__label--park {
+  grid-area: label-park;
+}
+
+.visited-spots__input--park {
+  grid-area: checkbox-park;
+}
+
+.visited-spots__label--rocks {
+  grid-area: label-rocks;
+}
+
+.visited-spots__input--rocks {
+  grid-area: checkbox-rocks;
+}
