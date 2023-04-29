@@ -4,6 +4,17 @@
   border: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: @tablet-width) {
+    grid-area: description;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-area: description;
+
+    padding-left: 96px;
+    padding-right: 96px;
+  }
 }
 
 .assessment-description__title {
@@ -15,6 +26,11 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+    margin-bottom: 28px;
+  }
 }
 
 .assessment-description__field {
@@ -23,6 +39,7 @@
   font-size: 18px;
   line-height: 26px;
   color: rgba(0, 0, 0, 0.3);
+  background-color: @bg-secondary;
 
   padding: 16px;
 

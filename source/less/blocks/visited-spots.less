@@ -1,17 +1,40 @@
 .visited-spots {
-  display: grid;
-  grid-template-columns: 46px 1fr;
-  grid-template-areas:
-    "checkbox-bridge label-bridge"
-    "checkbox-mountain label-mountain"
-    "checkbox-park label-park"
-    "checkbox-rocks label-rocks";
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
   border: none;
   margin: 0;
   padding: 0;
 
   row-gap: 16px;
+
+  @media (min-width: @tablet-width) {
+    grid-area: visited-spots;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+
+    padding-left: 84px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-area: visited-spots;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    padding: 0 0 31px 0;
+  }
+}
+
+.spot-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
 }
 
 .visited-spots__title {
@@ -23,10 +46,27 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    grid-column: 1 / -1;
+    font-size: 21px;
+    padding-left: 86px;
+    padding-right: 170px;
+
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 21px;
+    padding-left: 327px;
+    padding-right: 327px;
+
+    margin-bottom: 59px;
+  }
 }
 
 .visited-spots__input {
-  margin: 10px;
+  margin: 0;
 }
 
 .visited-spots__label {
@@ -36,36 +76,8 @@
   line-height: 26px;
 
   padding: 10px 10px 10px 16px;
-}
 
-.visited-spots__label--bridge {
-  grid-area: label-bridge;
-}
-
-.visited-spots__input--bridge {
-  grid-area: checkbox-bridge;
-}
-
-.visited-spots__label--mountain {
-  grid-area: label-mountain;
-}
-
-.visited-spots__input--mountain {
-  grid-area: checkbox-mountain;
-}
-
-.visited-spots__label--park {
-  grid-area: label-park;
-}
-
-.visited-spots__input--park {
-  grid-area: checkbox-park;
-}
-
-.visited-spots__label--rocks {
-  grid-area: label-rocks;
-}
-
-.visited-spots__input--rocks {
-  grid-area: checkbox-rocks;
+  @media (min-width: @tablet-width) {
+    padding: 10px 10px 10px 16px;
+  }
 }

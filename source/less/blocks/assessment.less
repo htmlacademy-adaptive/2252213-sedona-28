@@ -1,16 +1,40 @@
 .assessment {
-  display: grid;
-  grid-template-columns: 46px 1fr;
-  grid-template-areas:
-    "checkbox-positive label-positive"
-    "checkbox-negative label-negative"
-    "checkbox-indefinite label-indefinite";
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
   border: none;
   margin: 0;
   padding: 0;
 
   row-gap: 16px;
+
+  @media (min-width: @tablet-width) {
+    grid-area: assessment;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+
+    padding-left: 35px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-area: assessment;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    padding: 0 0 17px 0;
+  }
+}
+
+.assessment-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
 }
 
 .assessment__title {
@@ -22,10 +46,21 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 45px;
+  }
 }
 
 .assessment__input {
   margin: 10px;
+
+  background-color: @bg-secondary;
 }
 
 .assessment__label {
@@ -35,28 +70,4 @@
   line-height: 26px;
 
   padding: 10px 10px 10px 16px;
-}
-
-.assessment__input--positive {
-  grid-area: checkbox-positive;
-}
-
-.assessment__label--positive {
-  grid-area: label-positive;
-}
-
-.assessment__input--negative {
-  grid-area: checkbox-negative;
-}
-
-.assessment__label--negative {
-  grid-area: label-negative;
-}
-
-.assessment__input--indefinite {
-  grid-area: checkbox-indefinite;
-}
-
-.assessment__label--indefinite {
-  grid-area: label-indefinite;
 }
