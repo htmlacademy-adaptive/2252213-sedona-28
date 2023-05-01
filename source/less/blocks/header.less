@@ -1,5 +1,6 @@
 
 .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -18,7 +19,17 @@
   flex-wrap: wrap;
   flex-direction: column;
 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &.header__navigation--nojs {
+    position: static;
+  }
+
   @media (min-width: @tablet-width) {
+    position: static;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -26,7 +37,9 @@
 
 .header__logo {
   margin: 0 auto;
-  order: 1;
+
+  position: absolute;
+  left: calc(50% - 185px / 2);
 
   @media (min-width: @tablet-width) {
     position: absolute;
@@ -35,8 +48,62 @@
   }
 }
 
-.header__navigation-toggle {
+@media (max-width: @mobile-width-only) {
+  .header__navigation--closed .header__navigation-burger {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    z-index: 2;
+    display: block;
+    background-color: @white;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+
+  .header__navigation--opened .header__navigation-burger,
+  .header__navigation--nojs .header__navigation-burger {
+    display: none;
+  }
+}
+
+.header__navigation-burger {
   display: none;
+}
+
+@media (max-width: @mobile-width-only) {
+  .header__navigation--opened .header__navigation-close-button {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+    z-index: 1;
+    display: block;
+    background-color: @blue;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+
+  .header__navigation--closed .header__navigation-close-button,
+  .header__navigation--nojs .header__navigation-close-button {
+    display: none;
+  }
 }
 
 .header__navigation-close-button {
