@@ -32,13 +32,47 @@
   }
 }
 
-.spot-wrap {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+.visited-spots__control {
+  position: relative;
+}
+
+.visited-spots__control-mark--checkbox {
+  position: absolute;
+  background: #f2f2f2;
+  border-radius: 4px;
+  left: 0;
+  top: -5px;
+  width: 46px;
+  height: 46px;
+}
+
+.visited-spots__control:hover .visited-spots__control-mark--checkbox {
+  background-color: #c9dae8;
+}
+
+.visited-spots__input:focus + span {
+  outline: 2px solid #83b3d3;
+}
+
+.visited-spots__control:active .visited-spots__control-mark--checkbox {
+  background-color: #94a6b7;
+}
+
+.visited-spots__input[type="checkbox"]:checked + .visited-spots__control-mark--checkbox::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/check-mark.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  left: 15px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 .visited-spots__title {
+  position: relative;
   text-align: center;
   font-family: inherit;
   font-weight: 700;
@@ -66,12 +100,56 @@
   }
 }
 
+@media (min-width: @tablet-width) {
+  .visited-spots__title::before {
+    position: absolute;
+    content: "";
+    left: -80px;
+    top: 26px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .visited-spots__title::after {
+    position: absolute;
+    content: "";
+    left: 447px;
+    top: 26px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .visited-spots__title::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 26px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .visited-spots__title::after {
+    position: absolute;
+    content: "";
+    left: 680px;
+    top: 26px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+}
+
 .visited-spots__input {
   margin: 10px;
   background-color: @bg-secondary;
 }
 
-.visited-spots__label {
+.visited-spots__control-label {
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;

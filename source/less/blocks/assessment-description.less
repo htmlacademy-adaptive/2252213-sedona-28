@@ -18,6 +18,7 @@
 }
 
 .assessment-description__title {
+  position: relative;
   text-align: center;
   font-family: inherit;
   font-weight: 700;
@@ -30,6 +31,50 @@
   @media (min-width: @tablet-width) {
     font-size: 21px;
     margin-bottom: 28px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .assessment-description__title::before {
+    position: absolute;
+    content: "";
+    left: -201px;
+    top: 11px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .assessment-description__title::after {
+    position: absolute;
+    content: "";
+    left: 324px;
+    top: 11px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .assessment-description__title::before {
+    position: absolute;
+    content: "";
+    left: -340px;
+    top: 11px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .assessment-description__title::after {
+    position: absolute;
+    content: "";
+    left: 340px;
+    top: 11px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
   }
 }
 

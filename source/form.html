@@ -117,55 +117,59 @@
         <fieldset class="assessment">
           <legend class="assessment__title">Ваше общее впечатление:</legend>
 
-          <div class="assessment-wrap">
-            <label class="assessment__label assessment__label--positive" for="assessment-positive">Скорее
-              положительное</label>
-            <input class="assessment__input assessment__input--positive" type="radio" name="assessment" value="positive"
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="positive"
               id="assessment-positive" checked>
-          </div>
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Скорее положительное</span>
+          </label>
 
-          <div class="assessment-wrap">
-            <label class="assessment__label assessment__label--negative" for="assessment-negative">Скорее
-              отрицательное</label>
-            <input class="assessment__input assessment__input--negative" type="radio" name="assessment" value="negative"
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="negative"
               id="assessment-negative">
-          </div>
-          <div class="assessment-wrap">
-            <label class="assessment__label assessment__label--indefinite" for="assessment-indefinite">Затрудняюсь
-              ответить</label>
-            <input class="assessment__input assessment__input--indefinite" type="radio" name="assessment"
-              value="indefinite" id="assessment-indefinite">
-          </div>
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Скорее отрицательное</span>
+          </label>
+
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="indefinite"
+              id="assessment-indefinite">
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Затрудняюсь ответить</span>
+          </label>
 
         </fieldset>
 
         <fieldset class="visited-spots">
           <legend class="visited-spots__title">Посещенные достопримечательности:</legend>
 
-          <div class="spot-wrap">
-            <label class="visited-spots__label visited-spots__label--bridge" for="checkbox-bridge">Мост Дьявола</label>
-            <input class="visited-spots__input visited-spots__input--bridge" type="checkbox" name="visited-spots"
-              value="Devil Bridge" id="checkbox-bridge" checked>
-          </div>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Devil Bridge"
+              id="checkbox-bridge" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Мост Дьявола</span>
+          </label>
 
-          <div class="spot-wrap">
-            <label class="visited-spots__label visited-spots__label--mountain"
-              for="checkbox-mountain">Гора-Колокол</label>
-            <input class="visited-spots__input visited-spots__input--mountain" type="checkbox" name="visited-spots"
-              value="Bell Mountain" id="checkbox-mountain" checked>
-          </div>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Bell Mountain"
+              id="checkbox-mountain" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Гора-Колокол</span>
+          </label>
 
-          <div class="spot-wrap">
-            <label class="visited-spots__label visited-spots__label--park" id="checkbox-park">Слайд-парк</label>
-            <input class="visited-spots__input visited-spots__input--park" type="checkbox" name="visited-spots"
-              value="Slide Park" id="checkbox-park" checked>
-          </div>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Slide Park"
+              id="checkbox-park" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Слайд-парк</span>
+          </label>
 
-          <div class="spot-wrap">
-            <label class="visited-spots__label visited-spots__label--rocks" for="checkbox-rocks">Красные скалы</label>
-            <input class="visited-spots__input visited-spots__input--rocks" type="checkbox" name="visited-spots"
-              value="Red Rocks" id="checkbox-rocks">
-          </div>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Red Rocks"
+              id="checkbox-rocks">
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Красные скалы</span>
+          </label>
 
         </fieldset>
 

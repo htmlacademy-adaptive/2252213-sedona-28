@@ -4,11 +4,13 @@
   background-color: @bg-img;
   background-image: url("../img/intro-background-index-mobile.jpg");
   background-repeat: no-repeat;
-  padding-top: 90px;
-  padding-right: 19px;
-  padding-left: 19px;
-  padding-bottom: 85px;
+  min-width: 320px;
+  min-height: 158px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: 0 -150px;
 
   background-size: cover;
 
@@ -18,8 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 384px;
-    padding-right: 384px;
+    min-width: @tablet-width;
+    min-height: 290px;
   }
 
   @media (min-width: @desktop-width) {
@@ -28,8 +30,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 600px;
-    padding-right: 600px;
+    min-width: @desktop-width;
+    min-height: 300px;
   }
 }
 
