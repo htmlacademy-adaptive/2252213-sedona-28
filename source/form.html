@@ -17,17 +17,17 @@
       <img class="main-logo-img" src="img/main-logo.svg" width="185" height="96" alt="Логотип города Седона.">
     </a>
 
-    <nav class="header__navigation">
+    <nav class="header__navigation header__navigation--nojs header__navigation--closed">
 
-      <button class="header__navigation-toggle" type="button">
+      <button class="header__navigation-burger" type="button">
         <span class="visually-hidden">Открыть меню.</span>
-        <svg class="header__navigation-toggle-svg" aria-hidden="true" focusable="false"
+        <svg class="header__navigation-burger-svg" aria-hidden="true" focusable="false"
           xmlns="http://www.w3.org/2000/svg" width="23" height="22" fill="none" viewBox="0 0 23 22">
           <path fill="#81B3D2" d="M22.9 0H0v4h22.9V0ZM22.9 9H0v4h22.9V9ZM22.9 18H0v4h22.9v-4Z" />
         </svg>
       </button>
 
-      <button class="header__navigation-close-button">
+      <button class="header__navigation-close-button" type="button">
         <span class="visually-hidden">Закрыть.</span>
         <svg class="header__navigation-close-button-svg" aria-hidden="true" focusable="false"
           xmlns="http://www.w3.org/2000/svg" width="23" height="22" fill="none" viewBox="0 0 23 22">
@@ -58,7 +58,7 @@
 
   </header>
 
-  <main class="main-container">
+  <main class="main-container main-container--tablet main-container--form-desktop">
 
     <!-- Интро -->
     <h1 class="visually-hidden">Отзыв о Седоне.</h1>
@@ -94,6 +94,7 @@
 
           <label class="fullname__patronymic" for="patronymic">Отчество:</label>
           <input class="fullname__patronymic-input" type="text" value="Викторович" name="patronymic" id="patronymic">
+
         </fieldset>
 
         <fieldset class="user-contacts">
@@ -116,49 +117,68 @@
         <fieldset class="assessment">
           <legend class="assessment__title">Ваше общее впечатление:</legend>
 
-          <label class="assessment__label assessment__label--positive" for="assessment-positive">Скорее
-            положительное</label>
-          <input class="assessment__input assessment__input--positive" type="radio" name="assessment" value="positive"
-            id="assessment-positive" checked>
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="positive"
+              id="assessment-positive" checked>
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Скорее положительное</span>
+          </label>
 
-          <label class="assessment__label assessment__label--negative" for="assessment-negative">Скорее
-            отрицательное</label>
-          <input class="assessment__input assessment__input--negative" type="radio" name="assessment" value="negative"
-            id="assessment-negative">
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="negative"
+              id="assessment-negative">
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Скорее отрицательное</span>
+          </label>
 
-          <label class="assessment__label assessment__label--indefinite" for="assessment-indefinite">Затрудняюсь
-            ответить</label>
-          <input class="assessment__input assessment__input--indefinite" type="radio" name="assessment"
-            value="indefinite" id="assessment-indefinite">
+          <label class="assessment__control">
+            <input class="assessment__input" type="radio" name="assessment" value="indefinite"
+              id="assessment-indefinite">
+            <span class="assessment__control-mark--radio"></span>
+            <span class="assessment__control-label">Затрудняюсь ответить</span>
+          </label>
 
         </fieldset>
 
         <fieldset class="visited-spots">
           <legend class="visited-spots__title">Посещенные достопримечательности:</legend>
 
-          <label class="visited-spots__label visited-spots__label--bridge" for="checkbox-bridge">Мост Дьявола</label>
-          <input class="visited-spots__input visited-spots__input--bridge" type="checkbox" name="visited-spots"
-            value="Devil Bridge" id="checkbox-bridge" checked>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Devil Bridge"
+              id="checkbox-bridge" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Мост Дьявола</span>
+          </label>
 
-          <label class="visited-spots__label visited-spots__label--mountain"
-            for="checkbox-mountain">Гора-Колокол</label>
-          <input class="visited-spots__input visited-spots__input--mountain" type="checkbox" name="visited-spots"
-            value="Bell Mountain" id="checkbox-mountain" checked>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Bell Mountain"
+              id="checkbox-mountain" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Гора-Колокол</span>
+          </label>
 
-          <label class="visited-spots__label visited-spots__label--park" id="checkbox-park">Слайд-парк</label>
-          <input class="visited-spots__input visited-spots__input--park" type="checkbox" name="visited-spots"
-            value="Slide Park" id="checkbox-park" checked>
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Slide Park"
+              id="checkbox-park" checked>
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Слайд-парк</span>
+          </label>
 
-          <label class="visited-spots__label visited-spots__label--rocks" for="checkbox-rocks">Красные скалы</label>
-          <input class="visited-spots__input visited-spots__input--rocks" type="checkbox" name="visited-spots"
-            value="Red Rocks" id="checkbox-rocks">
+          <label class="visited-spots__control">
+            <input class="visited-spots__input" type="checkbox" name="visited-spots" value="Red Rocks"
+              id="checkbox-rocks">
+            <span class="visited-spots__control-mark--checkbox"></span>
+            <span class="visited-spots__control-label">Красные скалы</span>
+          </label>
 
         </fieldset>
 
         <fieldset class="assessment-description">
+
           <legend class="assessment-description__title" for="description-field">Опишите свои эмоции:</legend>
           <textarea class="assessment-description__field" name="description"
             placeholder="Опишите подробно все свои восторги" id="description-field" rows="5"></textarea>
+
         </fieldset>
 
         <div class="feedback__button-wrapper">
@@ -244,7 +264,7 @@
   <div class="modal-failure-container modal-container-close">
     <div class="modal-failure">
       <p class="modal-failure__title">ЧТО-ТО ПОШЛО НЕ ТАК!</p>
-      <p class="modal-failure__description">Проверьте поля, выделенные<br> красным, скорее всего вы<br> забыли их
+      <p class="modal-failure__description">Проверьте поля, выделенные красным, скорее всего вы забыли их
         заполнить</p>
       <button class="button modal-failure__button" type="button">OK</button>
     </div>
@@ -260,6 +280,7 @@
     </div>
   </div>
 
+  <script src="./js/script.js"></script>
 </body>
 
 </html>

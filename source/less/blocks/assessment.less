@@ -1,19 +1,82 @@
 .assessment {
-  display: grid;
-  grid-template-columns: 46px 1fr;
-  grid-template-areas:
-    "checkbox-positive label-positive"
-    "checkbox-negative label-negative"
-    "checkbox-indefinite label-indefinite";
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
 
   border: none;
   margin: 0;
   padding: 0;
 
   row-gap: 16px;
+
+  @media (min-width: @tablet-width) {
+    grid-area: assessment;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+
+    padding-left: 35px;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-area: assessment;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    padding: 0 0 17px 0;
+  }
+}
+
+.assessment__control {
+  position: relative;
+}
+
+.assessment__control-mark--radio {
+  position: absolute;
+  background: #f2f2f2;
+  border-radius: 50%;
+  left: 0;
+  top: -5px;
+  width: 46px;
+  height: 46px;
+}
+
+.assessment__control:hover .assessment__control-mark--radio {
+  background-color: #c9dae8;
+}
+
+.assessment__input:focus + span {
+  outline: 2px solid #83b3d3;
+}
+
+.assessment__control:active .assessment__control-mark--radio {
+  background-color: #94a6b7;
+}
+
+.assessment__input[type="radio"]:checked + .assessment__control-mark--radio {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.assessment__input[type="radio"]:checked + .assessment__control-mark--radio::before {
+  position: absolute;
+  content: "";
+  background-image: url("../img/dot.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  left: 15px;
+  top: 15px;
+  width: 16px;
+  height: 16px;
 }
 
 .assessment__title {
+  position: relative;
   text-align: center;
   font-family: inherit;
   font-weight: 700;
@@ -22,41 +85,72 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 45px;
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  .assessment__title::before {
+    position: absolute;
+    content: "";
+    left: -201px;
+    top: 11px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .assessment__title::after {
+    position: absolute;
+    content: "";
+    left: 324px;
+    top: 11px;
+    width: 123px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .assessment__title::before {
+    position: absolute;
+    content: "";
+    left: -340px;
+    top: 11px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
+
+  .assessment__title::after {
+    position: absolute;
+    content: "";
+    left: 340px;
+    top: 11px;
+    width: 280px;
+    height: 2px;
+    background: hsl(0, 0%, 86%);
+  }
 }
 
 .assessment__input {
   margin: 10px;
 }
 
-.assessment__label {
+.assessment__control-label {
+  position: relative;
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
 
   padding: 10px 10px 10px 16px;
-}
-
-.assessment__input--positive {
-  grid-area: checkbox-positive;
-}
-
-.assessment__label--positive {
-  grid-area: label-positive;
-}
-
-.assessment__input--negative {
-  grid-area: checkbox-negative;
-}
-
-.assessment__label--negative {
-  grid-area: label-negative;
-}
-
-.assessment__input--indefinite {
-  grid-area: checkbox-indefinite;
-}
-
-.assessment__label--indefinite {
-  grid-area: label-indefinite;
 }

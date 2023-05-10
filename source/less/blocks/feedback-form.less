@@ -1,4 +1,20 @@
 .feedback-form {
   display: grid;
-  gap: 40px;
+  row-gap: 40px;
+
+  @media (min-width: @tablet-width) {
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "fullname contacts"
+      "assessment assessment"
+      "visited-spots visited-spots"
+      "description description"
+      "button button";
+
+    row-gap: 48px;
+  }
+
+  @media (min-width: @desktop-width) {
+    row-gap: 56px;
+  }
 }

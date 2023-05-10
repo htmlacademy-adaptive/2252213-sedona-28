@@ -6,6 +6,16 @@
   border: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: @tablet-width) {
+    grid-area: fullname;
+    border-right: 1px solid hsl(0, 0%, 86%);
+    padding-right: 43px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-right: 63px;
+  }
 }
 
 .fullname__title {
@@ -17,6 +27,10 @@
   text-transform: uppercase;
 
   margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    font-size: 21px;
+  }
 }
 
 .fullname__name {
@@ -35,11 +49,11 @@
   font-size: 18px;
   line-height: 26px;
 
+  background-color: @bg-secondary;
+
   margin-bottom: 16px;
 
   border: none;
-
-  box-sizing: border-box;
 }
 
 .fullname__surname {
@@ -57,6 +71,8 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
+
+  background-color: @bg-secondary;
 
   margin-bottom: 16px;
 
@@ -78,5 +94,8 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
+
+  background-color: @bg-secondary;
+
   border: none;
 }
